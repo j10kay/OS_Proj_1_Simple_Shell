@@ -130,12 +130,12 @@ int main() {
       
           pid = fork();  // Task 2 - Adding Processes 
           int background_process = 0;  // Task 3 - Adding Background Processes
-					if (arguments[1] != NULL){
-						if (strcmp(arguments[1], "&") == 0){
-							background_process = 1;
-							arguments[1] = NULL;
-						}
-					}
+	  if (arguments[1] != NULL){
+		if (strcmp(arguments[1], "&") == 0){
+			background_process = 1;
+			arguments[1] = NULL;
+		}
+	  }
           if (pid < 0) {  
               perror("Fork error!\n");
               exit(1);
@@ -143,28 +143,28 @@ int main() {
             signal(SIGINT, int_handler); // Task 4 - Signal Handling
             
             int fd0;  // Task 6 - Extra Credit 
-						int out = 0;
-						char output[64];
+	    int out = 0;
+	     char output[64];
             int j; 
-						for(j=0; arguments[j] != '\0'; j++)
-						{
-								if(strcmp(arguments[j], ">")==0){        
-										arguments[j]=NULL;
-										strcpy(output, arguments[j+1]);
-										out=1;           
-								}                       
-						}					
-						if(out > 0)
-						{
-								int fd1 ;
-								if ((fd1 = creat(output , 0644)) < 0) {
-										perror("Error occurred while trying to open the output file");
-										exit(0);
-								}           
+	    for(j=0; arguments[j] != '\0'; j++)
+	    {
+		if(strcmp(arguments[j], ">")==0){        
+				arguments[j]=NULL;
+				strcpy(output, arguments[j+1]);
+				out=1;           
+		}                       
+	    }					
+	    if(out > 0)
+	    {
+		int fd1 ;
+		if ((fd1 = creat(output , 0644)) < 0) {
+				perror("Error occurred while trying to open the output file");
+				exit(0);
+		}           
 
-								dup2(fd1, 1);
-								close(fd1);
-						}
+		dup2(fd1, 1);
+		close(fd1);
+	    }
             
             if (execvp(arguments[0], arguments) < 0 ){
               perror("execvp() failed: No such file or directory\n");   // Input is not executable.
