@@ -1,0 +1,12 @@
+total 68
+-rwxrwxr-x 1 codio codio  8577 Oct 15 05:08 fake
+-rw-rw-r-- 1 codio codio   214 Oct 15 05:08 fake_process.c
+-rw-r--r-- 1 codio codio     0 Oct 15 06:12 file_output
+-rw-r--r-- 1 codio codio    37 Oct  8 23:48 Makefile
+-rw-r--r-- 1 codio codio  2353 Oct 11 20:50 README.md
+-rwxr-xr-x 1 codio codio 14447 Sep 27 17:33 ref_shell
+-rwxrwxr-x 1 codio codio 14440 Oct 15 06:03 shell
+-rw-r--r-- 1 codio codio  5394 Oct 15 06:03 shell.c
+-rw-r--r-- 1 codio codio   232 Sep 27 16:47 testData
+drwxr-xr-x 1 codio codio    36 Oct 11 20:50 testDir1
+drwxr-xr-x 1 codio codio    20 Oct 11 20:50 testDir2
